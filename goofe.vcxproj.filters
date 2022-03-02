@@ -28,5 +28,8 @@
     <ClInclude Include="config.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="utilities\pimpl_pointer.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
