@@ -6,6 +6,7 @@
 #include <string>
 #include <string_view>
 
+#include "../config.h"
 #include "../utilities/pimpl_pointer.hpp"
 
 namespace goofe::graphic {
@@ -37,6 +38,8 @@ namespace goofe::graphic {
 						.height = WINDOW_DEFAULT_HEIGHT,
 						.title = WINDOW_DEFAULT_TITLE.data()});
 		~Window();
+
+	public:
 
 		void show() noexcept;
 		bool isOpen() noexcept;
@@ -76,13 +79,13 @@ namespace goofe::graphic {
 	template<typename SubSys>
 	void Window<SubSys>::show() noexcept
 	{
-		impl_->subSys.showWindow(impl_->subSys.wndPtr);
+		impl_->subSys.showWindow(impl_->wndPtr);
 	}
 
 	template<typename SubSys>
 	bool Window<SubSys>::isOpen() noexcept
 	{
-		return !impl_->subSys.isWindowShouldClose(impl_->subSys.wndPtr);
+		return !impl_->subSys.isWindowShouldClose(impl_->wndPtr);
 	}
 
 } // namespace goofe::graphic
