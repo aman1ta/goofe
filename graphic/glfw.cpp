@@ -34,6 +34,8 @@ goofe::graphic::GLFW::buildWindow(std::string_view title, std::size_t width, std
 		throw std::runtime_error(msg);
 	}
 
+	glfwMakeContextCurrent(newWindow);
+
 	return window_ptr(newWindow, glfwDestroyWindow);
 }
 
