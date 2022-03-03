@@ -7,4 +7,4 @@ namespace goofe::graphic {
 
 	using glfw_window = Window<GLFW>;
 
-}
+} // namespace goofe::graphic

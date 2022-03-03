@@ -1,4 +1,5 @@
 #include <iostream>
+#include "graphic/renderer.hpp"
 #include "graphic/glfw_window.hpp"
 
 int main() {

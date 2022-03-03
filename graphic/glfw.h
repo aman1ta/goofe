@@ -12,7 +12,7 @@ namespace goofe::graphic {
 	constexpr std::size_t GLFW_LAST_VERSION_MAJOR{ 4 };
 	constexpr std::size_t GLFW_LAST_VERSION_MINOR{ 6 };
 
-}
+} // namespace goofe::graphic
 
 namespace goofe::graphic {
 
@@ -41,4 +41,4 @@ namespace goofe::graphic {
 
 	};
 
-}
+} // namespace goofe::graphic

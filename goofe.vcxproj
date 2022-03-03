@@ -164,6 +164,7 @@
     <ClInclude Include="dependencies\glfw\include\glfw\glfw3native.h" />
     <ClInclude Include="graphic\glfw.h" />
     <ClInclude Include="graphic\glfw_window.hpp" />
+    <ClInclude Include="graphic\renderer.hpp" />
     <ClInclude Include="graphic\window.hpp" />
     <ClInclude Include="utilities\pimpl_pointer.hpp" />
   </ItemGroup>
