@@ -44,6 +44,8 @@ namespace goofe::graphic {
 		void show() noexcept;
 		bool isOpen() noexcept;
 
+		SubSys::window_ptr getInstance() noexcept;
+
 	private:
 
 		struct Impl_ {
@@ -86,6 +88,12 @@ namespace goofe::graphic {
 	bool Window<SubSys>::isOpen() noexcept
 	{
 		return !impl_->subSys.isWindowShouldClose(impl_->wndPtr);
+	}
+
+	template<typename SubSys>
+	inline SubSys::window_ptr Window<SubSys>::getInstance() noexcept
+	{
+		return impl_->wndPtr;
 	}
 
 } // namespace goofe::graphic
