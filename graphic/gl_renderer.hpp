@@ -1,10 +1,10 @@
 #pragma once
 
 #include "renderer.hpp"
-#include "glew.h"
+#include "glew_out.h"
 
 namespace goofe::graphic {
 
-	using glew_renderer = Renderer<GLEW>;
+	using gl_renderer = Renderer<GLEWOut>;
 
 } // namespace goofe::graphic
