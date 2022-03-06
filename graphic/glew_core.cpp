@@ -4,6 +4,8 @@
 
 #include "glew_core.h"
 
+bool goofe::graphic::GLEWCore::CoreImpl_::isInitialized = false;
+
 void 
 goofe::graphic::GLEWCore::CoreImpl_::build(const GLEWCoreInfo& info)
 {

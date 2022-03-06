@@ -19,6 +19,8 @@ namespace goofe::graphic {
 	class Renderer {
 	public:
 
+		using SceneType = SubSys::SceneType;
+		using ShaderPipelineType = SubSys::ShaderPipelineType;
 		using RenderingLevel = SubSys::RenderingLevel;
 
 	public:
@@ -29,7 +31,8 @@ namespace goofe::graphic {
 
 	public:
 
-		void render(const typename SubSys::SceneType& scene, RenderingLevel level) noexcept;
+		void render(const typename ShaderPipelineType& pipeline, 
+			const typename SceneType& scene, RenderingLevel level) noexcept;
 
 	private:
 
@@ -61,10 +64,11 @@ namespace goofe::graphic {
 	}
 
 	template<typename SubSys>
-	void Renderer<SubSys>::render(const typename SubSys::SceneType& scene, RenderingLevel level)
-		noexcept
+	void Renderer<SubSys>::render(const typename ShaderPipelineType& pipeline,
+		const typename SceneType& scene, RenderingLevel level) noexcept
 	{
 		impl_->subSys.clearViewport();
+		impl_->subSys.useShaderPipeline(pipeline);
 		impl_->subSys.renderScene(scene, level);
 	}
 

@@ -5,6 +5,7 @@
 #include "types.h"
 #include "glew_core.h"
 #include "gl_scene.h"
+#include "gl_pipeline.h"
 
 namespace goofe::graphic {
 
@@ -15,9 +16,10 @@ namespace goofe::graphic {
 	class GLEWOut : virtual public GLEWCore {
 	public:
 
+		using ShaderPipelineType = GLPipeline;
 		using SceneType = GLScene;
 
-		enum class RenderingLevel : std::uint8_t {
+		enum class RenderingLevel {
 			VERTEX = GL_POINTS,
 			EDGE = GL_LINE_STRIP,
 			SURFACE = GL_TRIANGLES
@@ -33,6 +35,7 @@ namespace goofe::graphic {
 		void setClearColor(rgb color) noexcept;
 		void clearViewport() noexcept;
 
+		void useShaderPipeline(const ShaderPipelineType& pipeline);
 		void renderScene(const SceneType& scene, RenderingLevel level);
 
 	};

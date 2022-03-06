@@ -10,7 +10,7 @@
 namespace goofe::graphic {
 
 	struct GLScene {
-		std::uint32_t id, buf_id;
+		std::uint32_t id;
 		std::size_t indices_offset, indices_count;
 
 		explicit GLScene(const PackedScene& scene);
@@ -19,7 +19,8 @@ namespace goofe::graphic {
 	private:
 
 		struct Impl_ {
-			GLEWIn memManager;
+			std::uint32_t buf_id;
+			GLEWIn inputManager;
 		};
 
 	private:

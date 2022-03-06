@@ -2,16 +2,16 @@
 
 goofe::graphic::GLScene::GLScene(const PackedScene& scene)
 {
-	impl_->memManager.build();
+	impl_->inputManager.build();
 
 	indices_count = scene.indices.size();
-	auto vertexData = impl_->memManager.calcVertexData(indices_count, scene.vertices.size());
+	auto vertexData = impl_->inputManager.calcVertexData(indices_count, scene.vertices.size());
 	indices_offset = vertexData.indices_offset;
-	buf_id = impl_->memManager.buildVertexBuffer(scene.indices, scene.vertices, vertexData);
-	id = impl_->memManager.buildVertexArray(buf_id);
+	impl_->buf_id = impl_->inputManager.buildVertexBuffer(scene.indices, scene.vertices, vertexData);
+	id = impl_->inputManager.buildVertexArray(impl_->buf_id);
 }
 
 goofe::graphic::GLScene::~GLScene()
 {
-	impl_->memManager.delVertexData(id, buf_id);
+	impl_->inputManager.delVertexData(id, impl_->buf_id);
 }

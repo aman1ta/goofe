@@ -160,6 +160,7 @@
     <ClCompile Include="graphic\glew_in.cpp" />
     <ClCompile Include="graphic\glew_out.cpp" />
     <ClCompile Include="graphic\glfw.cpp" />
+    <ClCompile Include="graphic\gl_pipeline.cpp" />
     <ClCompile Include="graphic\gl_scene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -174,6 +175,7 @@
     <ClInclude Include="graphic\glew_core.h" />
     <ClInclude Include="graphic\glew_in.h" />
     <ClInclude Include="graphic\glew_out.h" />
+    <ClInclude Include="graphic\gl_pipeline.h" />
     <ClInclude Include="graphic\gl_renderer.hpp" />
     <ClInclude Include="graphic\glfw.h" />
     <ClInclude Include="graphic\glfw_window.hpp" />

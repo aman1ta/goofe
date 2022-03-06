@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <cstdint>
 
-#include <string>
-
 #include <vector>
 
 #include <glm/ext/vector_float3.hpp>

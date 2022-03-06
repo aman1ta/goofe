@@ -29,6 +29,12 @@ goofe::graphic::GLEWOut::clearViewport() noexcept
 }
 
 void 
+goofe::graphic::GLEWOut::useShaderPipeline(const ShaderPipelineType& pipeline)
+{
+	glBindProgramPipeline(pipeline.id);
+}
+
+void
 goofe::graphic::GLEWOut::renderScene(const SceneType& scene, RenderingLevel level)
 {
 	glBindVertexArray(scene.id);

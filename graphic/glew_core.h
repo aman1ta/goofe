@@ -17,7 +17,7 @@ namespace goofe::graphic {
 	protected:
 
 		struct CoreImpl_ {
-			bool isInitialized;
+			static bool isInitialized;
 			void build(const GLEWCoreInfo& info = GLEWCoreInfo{});
 		};
 
