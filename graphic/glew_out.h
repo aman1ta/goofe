@@ -27,7 +27,7 @@ namespace goofe::graphic {
 
 	public:
 
-		void build(const GLEWOutInfo& info = GLEWOutInfo{});
+		void build();
 		void destroy();
 
 	public:

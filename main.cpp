@@ -27,16 +27,16 @@ int main() {
 		"color = vertexColor;\n"
 		"}\n" };
 
-	goofe::graphic::GLEWIn::Shader vertexShader{ 
-		.type = goofe::graphic::GLEWIn::ShaderType::VERTEX, 
-		.stage = goofe::graphic::GLEWIn::ShaderPipelineStage::VERTEX, 
+	goofe::graphic::GLEWShaders::Shader vertexShader{ 
+		.type = goofe::graphic::GLEWShaders::ShaderType::VERTEX, 
+		.stage = goofe::graphic::GLEWShaders::ShaderPipelineStage::VERTEX, 
 		.source = vertexSource };
-	goofe::graphic::GLEWIn::Shader fragmentShader{
-		.type = goofe::graphic::GLEWIn::ShaderType::FRAGMENT,
-		.stage = goofe::graphic::GLEWIn::ShaderPipelineStage::FRAGMENT,
+	goofe::graphic::GLEWShaders::Shader fragmentShader{
+		.type = goofe::graphic::GLEWShaders::ShaderType::FRAGMENT,
+		.stage = goofe::graphic::GLEWShaders::ShaderPipelineStage::FRAGMENT,
 		.source = fragmentSource };
 
-	goofe::graphic::GLEWIn::ShaderPipeline pipeline{ vertexShader, fragmentShader };
+	goofe::graphic::GLEWShaders::ShaderPipeline pipeline{ vertexShader, fragmentShader };
 
 	goofe::graphic::PackedScene scene;
 	scene.indices = { 0, 1, 2,

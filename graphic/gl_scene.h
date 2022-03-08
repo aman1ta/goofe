@@ -3,7 +3,7 @@
 #include <cstdint>
 
 #include "types.h"
-#include "glew_in.h"
+#include "glew_vertices.h"
 
 #include "../utilities/pimpl_pointer.hpp"
 
@@ -20,7 +20,7 @@ namespace goofe::graphic {
 
 		struct Impl_ {
 			std::uint32_t buf_id;
-			GLEWIn inputManager;
+			GLEWVertices inputManager;
 		};
 
 	private:

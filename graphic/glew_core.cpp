@@ -7,7 +7,7 @@
 bool goofe::graphic::GLEWCore::CoreImpl_::isInitialized = false;
 
 void 
-goofe::graphic::GLEWCore::CoreImpl_::build(const GLEWCoreInfo& info)
+goofe::graphic::GLEWCore::CoreImpl_::build()
 {
 	if (glewInit() != GLEW_OK) {
 		auto msg = "[ERROR] goofe::graphic::GLEW::build():\n"

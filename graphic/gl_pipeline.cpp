@@ -2,7 +2,7 @@
 
 #include "gl_pipeline.h"
 
-goofe::graphic::GLPipeline::GLPipeline(const GLEWIn::ShaderPipeline& pipeline)
+goofe::graphic::GLPipeline::GLPipeline(const GLEWShaders::ShaderPipeline& pipeline)
 {
 	impl_->inputManager.build();
 

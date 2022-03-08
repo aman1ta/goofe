@@ -16,10 +16,6 @@ namespace goofe::graphic {
 
 namespace goofe::graphic {
 
-	struct GLFWInfo {
-		std::size_t vMajor, vMinor;
-	};
-
 	class GLFW {
 	public:
 
@@ -27,8 +23,7 @@ namespace goofe::graphic {
 
 	public:
 
-		void build(const GLFWInfo& info = GLFWInfo{ .vMajor = GLFW_LAST_VERSION_MAJOR,
-													.vMinor = GLFW_LAST_VERSION_MINOR });
+		void build();
 		void destroy();
 
 	public:

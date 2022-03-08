@@ -4,17 +4,17 @@
 #include "glfw.h"
 
 void 
-goofe::graphic::GLFW::build(const GLFWInfo& info)
+goofe::graphic::GLFW::build()
 {
 	if (glfwInit() != GLFW_TRUE) {
 		auto msg = std::format(
 			"[ERROR] goofe::graphic::GLFW::build():\n|Failed to initialize GLFW {}.{} library !",
-			info.vMajor, info.vMinor);
+			GLFW_LAST_VERSION_MAJOR, GLFW_LAST_VERSION_MINOR);
 		throw std::runtime_error(msg);
 	}
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, info.vMajor);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, info.vMinor);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, GLFW_LAST_VERSION_MAJOR);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, GLFW_LAST_VERSION_MINOR);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 }
 

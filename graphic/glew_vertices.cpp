@@ -1,9 +1,9 @@
-#include <algorithm>
+#include <gl/glew.h>
 
-#include "glew_in.h"
+#include "glew_vertices.h"
 
-void 
-goofe::graphic::GLEWIn::build(const GLEWInInfo& info)
+void
+goofe::graphic::GLEWVertices::build()
 {
 	if (!coreImpl_->isInitialized) {
 		try {
@@ -19,8 +19,8 @@ goofe::graphic::GLEWIn::build(const GLEWInInfo& info)
 	}
 }
 
-goofe::graphic::GLEWIn::VertexData 
-goofe::graphic::GLEWIn::calcVertexData(std::size_t indicesSize, std::size_t verticesSize)
+goofe::graphic::GLEWVertices::VertexData
+goofe::graphic::GLEWVertices::calcVertexData(std::size_t indicesSize, std::size_t verticesSize)
 {
 	uint32_t
 		indices_lenb = GLsizei(sizeof(std::size_t) * indicesSize),
@@ -40,7 +40,7 @@ goofe::graphic::GLEWIn::calcVertexData(std::size_t indicesSize, std::size_t vert
 }
 
 std::uint32_t
-goofe::graphic::GLEWIn::buildVertexBuffer(const std::vector<std::uint32_t>& indices, 
+goofe::graphic::GLEWVertices::buildVertexBuffer(const std::vector<std::uint32_t>& indices,
 	const std::vector<vertex3>& vertices, const VertexData& vertexData)
 {
 	std::uint32_t newVertexBufferID{ 0 };
@@ -64,19 +64,8 @@ goofe::graphic::GLEWIn::buildVertexBuffer(const std::vector<std::uint32_t>& indi
 	return newVertexBufferID;
 }
 
-std::uint32_t 
-goofe::graphic::GLEWIn::buildShaderProgram(std::uint32_t pipelineID, ShaderType type, 
-	ShaderPipelineStage stage, const std::string& source)
-{
-	auto c_source = source.c_str();
-	std::uint32_t newShaderProgramID = glCreateShaderProgramv(static_cast<GLenum>(type), 1, 
-		&c_source);
-	glUseProgramStages(pipelineID, static_cast<GLbitfield>(stage), newShaderProgramID);
-	return newShaderProgramID;
-}
-
-std::uint32_t 
-goofe::graphic::GLEWIn::buildVertexArray(std::uint32_t vertexBufID)
+std::uint32_t
+goofe::graphic::GLEWVertices::buildVertexArray(std::uint32_t vertexBufID)
 {
 	std::uint32_t newVertexArrayID{ 0 };
 	glCreateVertexArrays(1, &newVertexArrayID);
@@ -98,35 +87,15 @@ goofe::graphic::GLEWIn::buildVertexArray(std::uint32_t vertexBufID)
 	return newVertexArrayID;
 }
 
-std::uint32_t 
-goofe::graphic::GLEWIn::buildShaderPipeline()
-{
-	std::uint32_t newShaderPipelineID{ 0 };
-	glCreateProgramPipelines(1, &newShaderPipelineID);
-	return newShaderPipelineID;
-}
-
-void 
-goofe::graphic::GLEWIn::delVertexData(std::uint32_t vertexArrID, std::uint32_t vertexBufID)
+void
+goofe::graphic::GLEWVertices::delVertexData(std::uint32_t vertexArrID, std::uint32_t vertexBufID)
 {
 	glDeleteBuffers(1, &vertexBufID);
 	glDeleteVertexArrays(1, &vertexArrID);
 }
 
-void 
-goofe::graphic::GLEWIn::delShaderPipelineData(std::uint32_t pipelineID, 
-	std::vector<std::uint32_t>& programsIDs)
-{
-	std::for_each(programsIDs.begin(), programsIDs.end(),
-		[](const auto& id) {
-			glDeleteProgram(id);
-		}
-	);
-	glDeleteProgramPipelines(1, &pipelineID);
-}
-
 std::uint32_t
-goofe::graphic::GLEWIn::Impl_::align(std::uint32_t lenght)
+goofe::graphic::GLEWVertices::Impl_::align(std::uint32_t lenght)
 {
 	return (lenght + alignment - 1) & ~(alignment - 1);
 }

@@ -1,7 +1,7 @@
 #include "glew_out.h"
 
 void 
-goofe::graphic::GLEWOut::build(const GLEWOutInfo& info)
+goofe::graphic::GLEWOut::build()
 {
 	if (!coreImpl_->isInitialized) {
 		try {

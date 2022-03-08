@@ -4,21 +4,21 @@
 
 #include <vector>
 
-#include "glew_in.h"
+#include "glew_shaders.h"
 
 namespace goofe::graphic {
 
 	struct GLPipeline {
 		std::uint32_t id;
 
-		explicit GLPipeline(const GLEWIn::ShaderPipeline& pipeline);
+		explicit GLPipeline(const GLEWShaders::ShaderPipeline& pipeline);
 		~GLPipeline();
 
 	private:
 
 		struct Impl_ {
 			std::vector<std::uint32_t> programsIDs;
-			GLEWIn inputManager;
+			GLEWShaders inputManager;
 		};
 
 	private:

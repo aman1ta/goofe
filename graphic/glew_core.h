@@ -5,10 +5,6 @@
 
 namespace goofe::graphic {
 
-	struct GLEWCoreInfo {
-		// Coming soon ...
-	}; // struct GLEWInfo
-
 	class GLEWCore {
 	public:
 
@@ -18,7 +14,7 @@ namespace goofe::graphic {
 
 		struct CoreImpl_ {
 			static bool isInitialized;
-			void build(const GLEWCoreInfo& info = GLEWCoreInfo{});
+			void build();
 		};
 
 	protected:
