@@ -296,6 +296,7 @@
     <ClCompile Include="graphic\glew_core.cpp" />
     <ClCompile Include="graphic\glew_out.cpp" />
     <ClCompile Include="graphic\glew_shaders.cpp" />
+    <ClCompile Include="graphic\glew_uniforms.cpp" />
     <ClCompile Include="graphic\glew_vertices.cpp" />
     <ClCompile Include="graphic\glfw.cpp" />
     <ClCompile Include="graphic\gl_pipeline.cpp" />
@@ -595,11 +596,12 @@
     <ClInclude Include="graphic\glew_core.h" />
     <ClInclude Include="graphic\glew_out.h" />
     <ClInclude Include="graphic\glew_shaders.h" />
+    <ClInclude Include="graphic\glew_uniforms.h" />
     <ClInclude Include="graphic\glew_vertices.h" />
-    <ClInclude Include="graphic\gl_pipeline.h" />
-    <ClInclude Include="graphic\gl_renderer.hpp" />
     <ClInclude Include="graphic\glfw.h" />
     <ClInclude Include="graphic\glfw_window.hpp" />
+    <ClInclude Include="graphic\gl_pipeline.h" />
+    <ClInclude Include="graphic\gl_renderer.hpp" />
     <ClInclude Include="graphic\gl_scene.h" />
     <ClInclude Include="graphic\renderer.hpp" />
     <ClInclude Include="graphic\types.h" />

@@ -433,7 +433,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="graphic\glfw.cpp">
+    <ClCompile Include="dependencies\glm\include\glm\detail\glm.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="graphic\gl_pipeline.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="graphic\gl_scene.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="graphic\glew_core.cpp">
@@ -442,19 +448,16 @@
     <ClCompile Include="graphic\glew_out.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="graphic\gl_scene.cpp">
+    <ClCompile Include="graphic\glew_shaders.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="graphic\gl_pipeline.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="dependencies\glm\include\glm\detail\glm.cpp">
+    <ClCompile Include="graphic\glew_uniforms.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="graphic\glew_vertices.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="graphic\glew_shaders.cpp">
+    <ClCompile Include="graphic\glfw.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -465,25 +468,10 @@
     <ClInclude Include="utilities\pimpl_pointer.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="graphic\window.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\glfw.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="dependencies\glfw\include\glfw\glfw3.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\glfw\include\glfw\glfw3native.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\glfw_window.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\renderer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\gl_renderer.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\glew\include\GL\eglew.h">
@@ -496,21 +484,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\glew\include\GL\wglew.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\types.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\glew_core.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\glew_out.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\gl_scene.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="graphic\gl_pipeline.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\glm\include\glm\detail\_features.hpp">
@@ -1359,10 +1332,43 @@
     <ClInclude Include="dependencies\glm\include\glm\vector_relational.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="graphic\glew_vertices.h">
+    <ClInclude Include="graphic\window.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\gl_pipeline.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\gl_renderer.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\gl_scene.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glew_core.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glew_out.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="graphic\glew_shaders.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glew_uniforms.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glew_vertices.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glfw.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\glfw_window.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\renderer.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="graphic\types.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

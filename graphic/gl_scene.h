@@ -13,6 +13,8 @@ namespace goofe::graphic {
 		std::uint32_t id;
 		std::size_t indices_offset, indices_count;
 
+	public:
+
 		explicit GLScene(const PackedScene& scene);
 		~GLScene();
 

@@ -16,25 +16,30 @@ int main() {
 		"void main()\n"
 		"{\n"
 		"gl_Position = vec4(position, 1.0);\n"
-		"vertexColor = vec4(0.0f, 0.5f, 0.0f, 1.0f);\n"
+		"vertexColor = vec4(0.0f, 0.0f, 1.0f, 1.0f);\n"
 		"}\n" };
 	std::string fragmentSource{
 		"#version 400 core\n"
+		"uniform float animation;\n"
 		"in vec4 vertexColor;\n"
 		"out vec4 color;\n"
 		"void main()\n"
 		"{\n"
-		"color = vertexColor;\n"
+		"color = vertexColor * animation;\n"
 		"}\n" };
 
-	goofe::graphic::GLEWShaders::Shader vertexShader{ 
-		.type = goofe::graphic::GLEWShaders::ShaderType::VERTEX, 
-		.stage = goofe::graphic::GLEWShaders::ShaderPipelineStage::VERTEX, 
-		.source = vertexSource };
+	goofe::graphic::GLEWShaders::Shader vertexShader{
+		.type = goofe::graphic::GLEWShaders::ShaderType::VERTEX,
+		.stage = goofe::graphic::GLEWShaders::ShaderPipelineStage::VERTEX,
+		.source = vertexSource};
 	goofe::graphic::GLEWShaders::Shader fragmentShader{
 		.type = goofe::graphic::GLEWShaders::ShaderType::FRAGMENT,
 		.stage = goofe::graphic::GLEWShaders::ShaderPipelineStage::FRAGMENT,
-		.source = fragmentSource };
+		.source = fragmentSource,
+		.uniforms = {goofe::graphic::GLEWUniforms::Uniform{
+			.type = goofe::graphic::GLEWUniforms::UniformType::FLOAT,
+			.name = "animation",
+			.data = 0.5f}}};
 
 	goofe::graphic::GLEWShaders::ShaderPipeline pipeline{ vertexShader, fragmentShader };
 

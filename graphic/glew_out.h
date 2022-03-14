@@ -4,8 +4,11 @@
 
 #include "types.h"
 #include "glew_core.h"
+#include "glew_uniforms.h"
 #include "gl_scene.h"
 #include "gl_pipeline.h"
+
+#include "../utilities/pimpl_pointer.hpp"
 
 namespace goofe::graphic {
 
@@ -37,6 +40,16 @@ namespace goofe::graphic {
 
 		void useShaderPipeline(const ShaderPipelineType& pipeline);
 		void renderScene(const SceneType& scene, RenderingLevel level);
+
+	private:
+
+		struct Impl_ {
+			GLEWUniforms uniformManager;
+		};
+
+	private:
+
+		utilities::PimplPtr<Impl_> impl_;
 
 	};
 

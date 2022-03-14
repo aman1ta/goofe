@@ -1,3 +1,6 @@
+#include <any>
+#include <algorithm>
+
 #include "glew_out.h"
 
 void 
@@ -32,6 +35,12 @@ void
 goofe::graphic::GLEWOut::useShaderPipeline(const ShaderPipelineType& pipeline)
 {
 	glBindProgramPipeline(pipeline.id);
+	std::for_each(pipeline.uniforms.begin(), pipeline.uniforms.end(),
+		[&](const auto& uniform) {
+			auto location = impl_->uniformManager.getLocation(uniform.shaderProgramID, uniform.name);
+			impl_->uniformManager.load(uniform.shaderProgramID, location, uniform);
+		}
+	);
 }
 
 void

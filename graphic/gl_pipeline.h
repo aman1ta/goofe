@@ -9,7 +9,14 @@
 namespace goofe::graphic {
 
 	struct GLPipeline {
+	public:
+
+		using UniformType = GLEWUniforms::Uniform;
+
+	public:
+
 		std::uint32_t id;
+		std::vector<UniformType> uniforms;
 
 		explicit GLPipeline(const GLEWShaders::ShaderPipeline& pipeline);
 		~GLPipeline();
@@ -18,7 +25,7 @@ namespace goofe::graphic {
 
 		struct Impl_ {
 			std::vector<std::uint32_t> programsIDs;
-			GLEWShaders inputManager;
+			GLEWShaders shaderManager;
 		};
 
 	private:

@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace utilities {
+namespace goofe::utilities {
 
     // This code is taken from the website: www.habr.com
     // ref: https://habr.com/ru/post/311038/

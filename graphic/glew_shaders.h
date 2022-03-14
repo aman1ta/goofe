@@ -3,14 +3,19 @@
 #include <cstdint>
 #include <string>
 
+#include <vector>
+
 #include <gl/glew.h>
 
 #include "glew_core.h"
+#include "glew_uniforms.h"
 
 namespace goofe::graphic {
 
 	class GLEWShaders : virtual public GLEWCore {
 	public:
+
+		using UniformType = GLEWUniforms::Uniform;
 
 		enum class ShaderPipelineStage {
 			VERTEX = GL_VERTEX_SHADER_BIT,
@@ -30,6 +35,7 @@ namespace goofe::graphic {
 			ShaderType type;
 			ShaderPipelineStage stage;
 			std::string source;
+			std::vector<UniformType> uniforms;
 		}; // struct Shader
 
 		using ShaderPipeline = std::vector<Shader>;
