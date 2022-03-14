@@ -302,6 +302,7 @@
     <ClCompile Include="graphic\gl_pipeline.cpp" />
     <ClCompile Include="graphic\gl_scene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utilities\ascii_loading.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
@@ -606,6 +607,7 @@
     <ClInclude Include="graphic\renderer.hpp" />
     <ClInclude Include="graphic\types.h" />
     <ClInclude Include="graphic\window.hpp" />
+    <ClInclude Include="utilities\ascii_loading.h" />
     <ClInclude Include="utilities\pimpl_pointer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -460,6 +460,9 @@
     <ClCompile Include="graphic\glfw.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="utilities\ascii_loading.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -1369,6 +1372,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="graphic\types.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\ascii_loading.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

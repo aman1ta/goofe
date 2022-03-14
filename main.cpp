@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#include "utilities/ascii_loading.h"
+
 #include "graphic/gl_pipeline.h"
 #include "graphic/gl_scene.h"
 
